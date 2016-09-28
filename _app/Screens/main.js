@@ -11,6 +11,8 @@ import {
 
 import SplashScreen from './splashScreen'
 import MainScreen from './Containers/mainScreen'
+import SearchFlights from './Containers/SearchContainer'
+
 
 
 class APP extends Component{
@@ -23,10 +25,10 @@ class APP extends Component{
 
     case 'mainScreen':
     return Navigator.SceneConfigs.FloatFromBottom
-    
+
 
     default :
-    return Navigator.SceneConfigs.FloatFromLeft
+    return Navigator.SceneConfigs.FadeAndroid
   }}
 
   renderScene(route,navigator){
@@ -39,6 +41,10 @@ class APP extends Component{
     case 'mainScreen':
     return <MainScreen  navigator={navigator} />
 
+    case 'flight':
+    return <SearchFlights  navigator={navigator} />
+
+
   }
 }
 
@@ -49,7 +55,7 @@ class APP extends Component{
 
       <Navigator
       style = {styles.mainscreen}
-      initialRoute={{name: 'splashScreen'}}
+      initialRoute={{name: 'mainScreen'}}
       renderScene={this.renderScene.bind(this)}
       configureScene={this.configureScene.bind(this)}
       />

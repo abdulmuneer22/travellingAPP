@@ -20,6 +20,7 @@ import ListCard from '../components/listCard'
 
 class Home  extends Component {
   render() {
+    //console.log(this.props)
     return (
 
       <ScrollView>
@@ -31,7 +32,7 @@ class Home  extends Component {
         marginBottom : 10
       }}>
       
-      <MenuCard/>
+      <MenuCard navigator={this.props.navigator}/>
       <ListCard/>
       
       <View style={{
@@ -45,10 +46,10 @@ class Home  extends Component {
         
         <Image
           style={{
-            width: window.width-20, 
+            width: null, 
             height: 160,
           }}
-          resizeMode='center'
+          resizeMode='contain'
           //source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
           source={require('../images/banner.png')}/>
 
@@ -68,7 +69,7 @@ class Home  extends Component {
             width: window.width-20, 
             height: 160,
           }}
-          resizeMode='center'
+          resizeMode='contain'
           source={require('../images/inviteBanner.png')}/>
 
       </View>

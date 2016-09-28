@@ -11,22 +11,26 @@ import IconButton from './iconButton'
 
 class MenuCard  extends Component {
   render() {
+    //console.log(this.props)
     return (
       <View style={{
           backgroundColor : 'white', 
-          height : 150,
+          //height : 150,
           margin :10,
           borderColor : 'white',
           borderRadius : 2,
-          //padding : 10,
+          paddingTop : 20,
+          
         }}>
 
         <View style={{
         flexDirection : 'row',
         alignItems :'stretch',
         justifyContent : 'center',
-         }}>
-            <IconButton name="flight" nav = "Flights"/>
+         }}
+         
+         >
+            <IconButton name="flight" nav = "Flights" navigator={this.props.navigator}/>
             <IconButton name="hotel" nav = "Hotels"/>
             <IconButton name="home" nav = "HomeStay"/>
             <IconButton name="local-taxi" nav = "Cab"/>
@@ -36,6 +40,7 @@ class MenuCard  extends Component {
         flexDirection : 'row',
         alignItems :'center',
         justifyContent : 'center',
+        paddingBottom : 10
          }}>
             <IconButton name="local-activity" nav = "Activities"/>
             <IconButton name="directions-bus" nav = "Bus"/>

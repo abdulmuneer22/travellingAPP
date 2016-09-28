@@ -1,0 +1,6 @@
+<Navigator
+style = {styles.mainscreen}
+initialRoute={{name: 'splashScreen'}}
+renderScene={this.renderScene.bind(this)}
+configureScene={this.configureScene.bind(this)}
+/>

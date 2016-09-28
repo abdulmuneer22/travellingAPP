@@ -25,7 +25,9 @@ class MainScreen extends Component {
                <View style={{marginBottom : 10}}></View>
                 <ScrollableTabView>
 
-                <Home tabLabel="Home" style={{flex : 1}}/>
+                <Home tabLabel="Home" 
+                navigator={this.props.navigator}
+                style={{flex : 1}}/>
                 <Bookings tabLabel="Bookings" style={{flex : 3}} />
                 </ScrollableTabView>
             

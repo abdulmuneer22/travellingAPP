@@ -28,7 +28,7 @@ setTimeout(()=>
        this.props.navigator.push({name:'mainScreen'})
 
     },
-    1000
+    3000
 
       );
 
