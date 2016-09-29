@@ -4,7 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
-  PixelRatio
+  PixelRatio,
+  TouchableOpacity
 } from 'react-native';
 
 
@@ -15,23 +16,57 @@ class NavigationBar  extends Component {
   render() {
     return (
       <View style={{
-          backgroundColor : '#4c8bfb', 
-          
+          backgroundColor : '#4c8bfb',
+
           height: PixelRatio.getPixelSizeForLayoutSize(20),
-          //marginLeft :10,
-          //marginRight : 10,
-          //marginTop : 10
+          flexDirection : 'row' 
          
+
         }}>
 
-        <View style={{}}>
-        <Icon name= 'arrow-back' size={PixelRatio.getPixelSizeForLayoutSize(10)} color="white" />
+        <TouchableOpacity style={{
+          flex : 1,
+          flexDirection : 'column',
+          justifyContent : 'center',
+          padding : 15
+
+
+        }}>
+        <Icon name= {this.props.leftButton} size={PixelRatio.getPixelSizeForLayoutSize(10)} color="white" />
+        </TouchableOpacity>
+
+        <View
+        style={{
+          flex : 8,
+          justifyContent :'center',
+          marginLeft : 30
+      }}>
+        <Text
+        style={{
+          fontSize : 18,
+          color : '#ffffff',
+          alignSelf : 'flex-start',
+          //fontWeight : 'bold'
+          
+        }}
+        >{this.props.title}</Text>
         </View>
 
-        
-        
+
+       <TouchableOpacity style={{
+          flex : 1,
+          flexDirection : 'column',
+          justifyContent : 'center',
+          padding : 15
+
+
+        }}>
+        <Icon name= {this.props.rightButton} size={PixelRatio.getPixelSizeForLayoutSize(10)} color="white" />
+        </TouchableOpacity>
+
+
       </View>
-      
+
     );
   }
 }
